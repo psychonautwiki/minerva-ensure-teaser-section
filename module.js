@@ -1,4 +1,4 @@
-(() => {
+const runner = () => {
     try {
         const target = document.querySelector('.mf-section-0');
 
@@ -143,4 +143,10 @@
     } catch(_) {
         return;
     }
-})();
+}
+
+if (document.readyState === 'complete') {
+    runner();
+} else {
+    window.addEventListener('load', runner);
+}
